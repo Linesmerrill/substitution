@@ -20,19 +20,17 @@ int main(int argc, string argv[])
         return 1;                                               // secret error code
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)                                 // Loop through the string    key: a, i: 0 | key: b, i: 0 (n) On^2
     {
-        int j = isalpha(argv[1][i]);                            //is it a letter
-        if (j == 0)                                             // Check if it's not a letter
+                                //is it a letter
+        if (isalpha(argv[1][i]) == 0)                                             // Check if it's not a letter
         {
             printf("Key must only contain letters.\n");         // warning message
             return 1;                                           // secret error code
         }
-    }
-
-    for (int i = 0; i < n; i++)                                 // Loop through the string
-    {
-        for (int j = i + 1; j < n; j++)                         // Loop through every letter
+        
+        
+        for (int j = i + 1; j < n; j++)                         // Loop through every letter key:a, i: 0, j = 0 (n)
         {
             if (argv[1][i] == argv[1][j])                       // check for repreated letters
             {
